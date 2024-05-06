@@ -106,27 +106,3 @@ window = Window()
 # start the app
 sys.exit(App.exec())
 
-'''
-Explain the purpose of the UiComponents method in the Window class.
-
-Answer: The UiComponents method is responsible for setting up the graphical user interface (GUI) components of the application. It creates and configures a combo box for selecting countries, labels for displaying COVID-19 statistics, and connects the combo box to the get_cases method.
-How does the combo box in this project dynamically load country names?
-
-Answer: The country list contains names of countries. The UiComponents method iterates through the list, converts each country name to uppercase using i.upper(), and adds it to the combo box using self.combo_box.addItem(i).
-Explain the purpose of the get_cases method.
-
-Answer: The get_cases method is triggered when the user selects a country from the combo box. It retrieves COVID-19 statistics (total cases, recovered cases, and total deaths) for the selected country from the Worldometer website using web scraping with BeautifulSoup and updates the corresponding labels in the GUI.
-What is the role of the requests library in this project?
-
-Answer: The requests library is used to send HTTP requests to the Worldometer website and retrieve the HTML content of the page. This HTML content is then processed using BeautifulSoup to extract the relevant COVID-19 statistics.
-How are the COVID-19 statistics displayed in the PyQt5 application?
-
-Answer: The COVID-19 statistics (total cases, recovered cases, and total deaths) are displayed in the application's GUI using QLabel widgets. These labels are updated dynamically in the get_cases method based on the data fetched from the Worldometer website.
-How could you enhance error handling in the get_cases method?
-
-Answer: Error handling in the get_cases method could be improved by adding try-except blocks to capture and handle potential exceptions that may occur during the HTTP request or HTML parsing. This would make the application more robust and prevent crashes in case of network issues or changes in the website structure.
-What are the potential challenges or limitations of using web scraping in this project?
-
-Answer: Web scraping is subject to changes in the structure of the website, and if the Worldometer site undergoes modifications, the scraping logic may break. Additionally, web scraping may not be as reliable or efficient as using an official API, and it may raise ethical concerns if not done in accordance with the website's terms of use.
-
-'''
